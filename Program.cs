@@ -8,9 +8,8 @@ namespace Interface;
         {
             Tata tata = new Tata();
 
-            // user input for car Name
-            Console.WriteLine("Enter your carname? :");
-            string ModelName = Console.ReadLine();
+            // Console.WriteLine("Enter your carname? :");
+            // string ModelName = Convert.ToString(Console.ReadLine());
 
             //user input for average of car
             Console.WriteLine("How many kilometer does your car has travelled: ");
@@ -18,7 +17,19 @@ namespace Interface;
             Console.WriteLine("How much liter of Petrol/Diesel(lt) taken to travel: ");
             int B = Convert.ToInt32(Console.ReadLine());
 
+
+
+            int Result = tata.Average(A,B);
             //Final output
-            Console.WriteLine($"your {tata.Describe(ModelName)} Car has average of {tata.Average(A,B)} kmpl");
+            Console.WriteLine($"your {tata.Describe("Tata")} Car has mileage of {Result} kmpl");
+
+            if(Result<10){
+                Console.WriteLine($"low mileage : {Result}");
+            }
+            else{
+                Console.WriteLine($"Good mileage : {Result}");
+            }
+
+            
         }
     }
